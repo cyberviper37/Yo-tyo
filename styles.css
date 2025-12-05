@@ -1,0 +1,239 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    background: linear-gradient(135deg, #f5f0ff 0%, #fff0f5 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #4a4a4a;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+/* Screen Management */
+.screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.screen.hidden {
+    display: none;
+}
+
+/* Landing Screen */
+.game-title {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #9b87f5;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.rules-container {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
+    padding: 25px;
+    border: 2px solid #e8d5ff;
+}
+
+.rules-container h2 {
+    font-size: 1.5rem;
+    color: #8b7fb8;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.rules-list {
+    list-style: none;
+    padding: 0;
+}
+
+.rules-list li {
+    padding: 10px 0;
+    font-size: 1.1rem;
+    color: #6a6a6a;
+    border-bottom: 1px solid #f0e8ff;
+}
+
+.rules-list li:last-child {
+    border-bottom: none;
+}
+
+.rules-list li::before {
+    content: "• ";
+    color: #b8a9e6;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Game Screen */
+.score-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.3rem;
+    color: #8b7fb8;
+    margin-bottom: 10px;
+}
+
+.score-label {
+    font-weight: 500;
+}
+
+.score-value {
+    font-weight: 600;
+    color: #9b87f5;
+    font-size: 1.5rem;
+}
+
+.words-container {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.word-options {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.word-button {
+    width: 100%;
+    padding: 25px;
+    font-size: 2rem;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-weight: 500;
+    background: linear-gradient(135deg, #fff 0%, #f8f4ff 100%);
+    border: 3px solid #e8d5ff;
+    border-radius: 15px;
+    color: #6a6a6a;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.word-button:hover {
+    transform: scale(1.03);
+    border-color: #d4c4f0;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    background: linear-gradient(135deg, #fff 0%, #f0e8ff 100%);
+}
+
+.word-button:active {
+    transform: scale(0.98);
+}
+
+.word-button.correct {
+    background: linear-gradient(135deg, #a8e6a3 0%, #8dd88a 100%);
+    border-color: #7bc578;
+    color: #2d5a2a;
+    cursor: default;
+}
+
+.word-button.incorrect {
+    background: linear-gradient(135deg, #ffb3b3 0%, #ff9999 100%);
+    border-color: #ff8080;
+    color: #8b0000;
+    cursor: default;
+}
+
+.word-button.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Buttons */
+.actions-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 15px 35px;
+    font-size: 1.2rem;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-weight: 500;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #9b87f5 0%, #8b7fb8 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(155, 135, 245, 0.3);
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #b8a9e6 0%, #a89bd6 100%);
+    color: white;
+}
+
+.btn-secondary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(184, 169, 230, 0.3);
+}
+
+.btn-secondary:active {
+    transform: scale(0.98);
+}
+
+.btn.hidden {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 25px;
+    }
+
+    .game-title {
+        font-size: 2.5rem;
+    }
+
+    .word-button {
+        font-size: 1.5rem;
+        padding: 20px;
+    }
+
+    .btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+}
+

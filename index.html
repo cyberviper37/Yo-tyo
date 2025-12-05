@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>यो त्यो - Nepali Word Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Landing Screen -->
+        <div id="landing-screen" class="screen">
+            <h1 class="game-title">यो त्यो</h1>
+            <div class="rules-container">
+                <h2>खेल नियम</h2>
+                <ul class="rules-list">
+                    <li>दुई शब्दहरू देखाइनेछ</li>
+                    <li>एउटा सही शब्द र एउटा गलत शब्द</li>
+                    <li>सही शब्द छान्नुहोस्</li>
+                    <li>सही छान्दा +१ अंक</li>
+                    <li>गलत छान्दा खेल समाप्त</li>
+                </ul>
+            </div>
+            <button id="start-btn" class="btn btn-primary">सुरु गर्नुहोस्</button>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen hidden">
+            <div class="score-container">
+                <span class="score-label">अंक:</span>
+                <span id="score" class="score-value">०</span>
+            </div>
+            <div class="words-container">
+                <div id="word-options" class="word-options">
+                    <!-- Word buttons will be rendered here -->
+                </div>
+            </div>
+            <div class="actions-container">
+                <button id="next-btn" class="btn btn-secondary hidden">अर्को</button>
+                <button id="start-again-btn" class="btn btn-primary hidden">फेरि सुरु गर्नुहोस्</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="words.js"></script>
+    <script src="utils.js"></script>
+    <script src="ui.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
+
